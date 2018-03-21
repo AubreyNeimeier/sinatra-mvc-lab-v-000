@@ -5,7 +5,7 @@ class PigLatinizer
 
   def piglatinize(input_string)
     x = (input_string.split(" ").length == 1)? piglatinize_word(input_string) : piglatinize_sentence(input_string)
-    puts x
+    print x
     x
   end
 
