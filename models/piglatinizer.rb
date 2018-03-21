@@ -7,7 +7,6 @@ class PigLatinizer
     x = (input_string.split(" ").length == 1)? piglatinize_word(input_string) : splits(input_string)
     puts x
     x
-
   end
 
   def piglatinize_word(word)
@@ -29,16 +28,13 @@ class PigLatinizer
     #binding.pry
   end
 
-    def splits(words)
-      #binding.pry
+    def piglatinize_sentence(words)
       array_of_words = words.split(" ")
-      #binding.pry
       new_phrase = ""
       array_of_words.each do |w|
         new_phrase += " " + piglatinize(w)
       end
       new_phrase.strip
-      #binding.pry
     end
 
 end
