@@ -3,16 +3,15 @@ require 'pry'
 class PigLatinizer
   attr_reader :words
 
+  def piglatinize(input_string)
+    x = (input_string.split(" ").length == 1)? piglatinize_word(input_string) : splits(input_string)
+    puts x
+    x
+  end
 
-  def piglatinize(word)
+  def piglatinize_word(word)
     #any word begining with a vowel +> add 'way'
-    #any word beginning with a constonant, remove constonaent and place 'ay' on the end
-    word_array = word.split(" ")
-    #binding.pry
-    if word_array.length > 1
-      return splits(word)
-    end
-    #binding.pry
+    #any word beginning with a constonant, place constonant at end of word and place 'ay' on the end
     word = word.split("")
     if !word[0].match(/[aeiouAEIOU]/)
       until word[0].match(/[aeiouAEIOU]/)
@@ -20,6 +19,7 @@ class PigLatinizer
       end
       new_word = " "
       new_word = word.join("") + "ay"
+    #any word begining with a vowel +> add 'way'
     else
       new_word = word.join('')
       new_word += "way"
