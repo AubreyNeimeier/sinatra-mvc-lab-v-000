@@ -10,7 +10,6 @@ class PigLatinizer
   end
 
   def piglatinize_word(word)
-    #any word begining with a vowel +> add 'way'
     #any word beginning with a constonant, place constonant at end of word and place 'ay' on the end
     word = word.split("")
     if !word[0].match(/[aeiouAEIOU]/)
@@ -19,13 +18,13 @@ class PigLatinizer
       end
       new_word = " "
       new_word = word.join("") + "ay"
+
     #any word begining with a vowel +> add 'way'
     else
       new_word = word.join('')
       new_word += "way"
     end
     new_word
-    #binding.pry
   end
 
     def piglatinize_sentence(words)
