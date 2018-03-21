@@ -7,6 +7,7 @@ class PigLatinizer
     x = (input_string.split(" ").length == 1)? piglatinize_word(input_string) : splits(input_string)
     puts x
     x
+
   end
 
   def piglatinize_word(word)
